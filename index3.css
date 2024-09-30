@@ -1,0 +1,322 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    font-family: League Spartan;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    height: 60%;
+    width: 30%;
+}
+
+@media (max-width: 1024px){
+    section{
+        width: 50%;
+    }
+}
+@media (max-width: 768px){
+    section{
+        width: 70%;
+    }
+}
+@media (max-width: 480px){
+    section{
+        width: 90%;
+    }
+}
+@media (max-width: 480px){
+    button{
+        font-size: 1rem;
+        height: 2.5em;
+    }
+    .reset, .equal{
+        font-size: 1rem;
+        height: 2.5em;
+    }
+}
+
+.first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.theme{
+    display: flex;
+    align-items: center;
+}
+
+.th{
+    margin-right: 10px;
+}
+
+.themes{
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* width: 10px; */
+    padding: 5px;
+    /* border-radius: 25px; */
+
+}
+.themes .number{
+    font-size: 16px;
+    color: inherit;
+    width: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.themes .toggle-circle{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: inherit;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    top: 2px;
+}
+
+
+
+#display{
+    width: 100%;
+    height: 2.2em;
+    font-size: 190%;
+    margin-bottom: .7em;
+    text-align: right;
+    border-radius: 8px;
+    background: none;
+    padding-right: 10px;
+    color: inherit;
+    font-family: League Spartan;
+    border: none;
+    font-weight: 700;
+}
+
+#button{
+    width: 100%;
+    height: 80%;
+    padding-left: 18px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-right: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: .7em;
+}
+.button2{
+    display: flex;
+    gap: 16px;
+}
+.reset{
+    width: 10.2em;
+}
+.equal{
+    width: 10.2em;
+}
+
+#buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto) auto;
+    gap: 10px;
+}
+
+button{
+    background-color: inherit;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    color: inherit;
+    cursor: pointer;
+    width: 4.6em;
+    height: 2.8em;
+    font-weight: 700;
+    font-family: League Spartan;
+}
+
+
+body.dark{
+    background-color: hsl(222, 26%, 31%);
+}
+body.dark #button{
+    background-color: hsl(223, 31%, 20%);
+}
+body.dark #display{
+    background-color: hsl(224, 36%, 15%);   
+}
+body.dark ::placeholder{
+    color: white;
+}
+body.dark button{
+    background-color: white;
+    color: hsl(221, 14%, 31%);
+    border: 1px solid hsl(224, 28%, 35%);
+}   
+body.dark button.reset1{
+    background-color: hsl(225, 21%, 49%);
+    color: white;
+    font-family: sans-serif;
+}
+body.dark button.reset{
+    background-color: hsl(225, 21%, 49%);
+    color: white;
+    font-family: sans-serif;
+}
+body.dark button.equal{
+    background-color: hsl(6, 63%, 50%);
+    color: white;
+}
+body.dark #display{
+    color: white;
+}
+body.dark .calc{
+    color: white;
+    font-weight: 700;
+}
+body.dark .th{
+    color: white;
+    font-size: 40%;
+}
+body.dark .number{
+    color: white;
+}
+body.dark .themes{
+    background-color: hsl(223, 31%, 20%);
+}
+body.dark .toggle-circle{
+    background-color: hsl(6, 63%, 50%);
+    left: 2px;
+}
+
+
+body.light{
+    background-color: hsl(0, 0%, 90%);
+}
+body.light #button{
+    background-color: hsl(0, 5%, 81%);
+}
+body.light #display{
+    background-color: hsl(0, 0%, 93%);
+}
+body.light ::placeholder{
+    color: rgba(0, 0, 0, 0.842);
+}
+body.light button{
+    background-color: white;
+    color: black;
+    border-color: hsl(35, 11%, 61%);
+}
+body.light button.reset1{
+    background-color: hsl(185, 42%, 37%);
+    border-color: hsl(185, 58%, 25%);
+    color: white;
+    font-family: sans-serif;
+}
+body.light button.reset{
+    background-color: hsl(185, 42%, 37%);
+    border-color: hsl(185, 58%, 25%);
+    color: white;
+    font-family: sans-serif;
+}
+body.light button.equal{
+    background-color: hsl(25, 98%, 40%);
+    border-color: hsl(25, 99%, 27%);
+    color: white;
+    font-family: sans-serif;
+}
+body.light #display{
+    color: rgba(0, 0, 0, 0.842);
+}
+body.light .calc{
+    color: rgba(0, 0, 0, 0.842);
+    font-weight: 700;
+}
+body.light .th{
+    color: rgb(0, 0, 0);
+    font-size: 40%;
+}
+body.light .number{
+    color: black;
+}
+body.light .themes{
+    background-color: hsl(0, 5%, 81%);
+}
+body.light .toggle-circle{
+    background-color: hsl(25, 98%, 40%);
+    left: 30px;
+}
+
+
+body.orange{
+    background-color: hsl(268, 75%, 9%);
+}
+body.orange #button{
+    background-color: hsl(268, 71%, 12%);
+}
+body.orange #display{
+    background-color: hsl(268, 71%, 12%);
+}
+body.orange ::placeholder{
+    color: hsl(52, 100%, 62%);
+}
+body.orange button{
+    background-color: hsl(268, 47%, 21%);
+    color: hsl(52, 100%, 62%);
+    border-color: hsl(285, 91%, 52%);
+}
+body.orange button.reset1{
+    font-family: sans-serif;
+    background-color: hsl(281, 89%, 26%);
+    border-color: hsl(285, 91%, 52%);
+    color: white;
+}
+body.orange button.reset{
+    font-family: sans-serif;
+    background-color: hsl(281, 89%, 26%);
+    border-color: hsl(285, 91%, 52%);
+    color: white;
+}
+body.orange button.equal{
+    background-color: hsl(176, 100%, 44%);
+    color: white;
+    font-family: sans-serif;
+    border-color: hsl(177, 92%, 70%);
+}
+body.orange #display{
+    color: hsl(52, 100%, 62%);
+}
+body.orange .calc{
+    color: hsl(52, 100%, 62%);
+    font-weight: 700;
+}
+body.orange .th{
+    color: hsl(52, 100%, 62%);
+    font-size: 40%;
+}
+body.orange .number{
+    color: hsl(52, 100%, 62%);
+}
+body.orange .themes{
+    background-color: hsl(268, 71%, 12%);
+}
+body.orange .toggle-circle{
+    background-color: hsl(176, 100%, 44%);
+    left: 58px;
+}
+
+
